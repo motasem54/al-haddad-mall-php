@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحداد مول - متجر سوبرماركت فخم</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #DC2626;
+            --primary-dark: #991B1B;
+            --secondary: #0A0A0A;
+            --gold: #D4AF37;
+            --gold-light: #F4E4B0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background: #F9FAFB;
+            color: #0A0A0A;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+            color: white;
+            padding: 10px 0;
+            font-size: 13px;
+            box-shadow: 0 3px 15px rgba(220, 38, 38, 0.4);
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info span, .location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info i, .location i {
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        /* Header */
+        .main-header {
+            background: linear-gradient(180deg, #0A0A0A 0%, #1F1F1F 100%);
+            padding: 20px 0;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            filter: drop-shadow(0 5px 20px rgba(220, 38, 38, 0.6));
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+            padding: 12px 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            to { left: 100%; }
+        }
+
+        .logo-text h1 {
+            color: white;
+            font-size: 26px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            color: var(--gold-light);
+            font-size: 11px;
+            margin-top: 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            min-width: 200px;
+        }
+
+        .search-bar form {
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .search-bar form:focus-within {
+            border-color: var(--gold);
+            box-shadow: 0 8px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 14px 25px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .search-bar button {
+            background: linear-gradient(135deg, #DC2626, #991B1B);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .search-bar button:hover {
+            background: linear-gradient(135deg, #991B1B, #7F1D1D);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-icon {
+            color: white;
+            font-size: 24px;
+            position: relative;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .header-icon:hover {
+            color: var(--gold);
+            transform: scale(1.15);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: linear-gradient(135deg, #DC2626, #EF4444);
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 900;
+            box-shadow: 0 3px 12px rgba(220, 38, 38, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Navigation */
+        .main-nav {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.98), rgba(239, 68, 68, 0.98));
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 15px;
+            transition: all 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            transition: width 0.3s;
+            border-radius: 10px;
+        }
+
+        .main-nav a:hover {
+            color: var(--gold-light);
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #991B1B 0%, #DC2626 50%, #EF4444 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%23F9FAFB"></path></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .hero-title {
+            font-size: 44px;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 35px;
+            color: rgba(255,255,255,0.95);
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E4B0 100%);
+            color: #0A0A0A;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.8);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 18px;
+            font-weight: 900;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--gold), var(--primary), transparent);
+            border-radius: 10px;
+        }
+
+        /* Categories */
+        .categories-section {
+            padding: 80px 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .category-card:hover::before {
+            left: 100%;
+        }
+
+        .category-card:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 15px 45px rgba(220, 38, 38, 0.25);
+        }
+
+        .category-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            transition: all 0.4s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.2) rotate(10deg);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        }
+
+        .category-name {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #0A0A0A;
+            font-weight: 800;
+        }
+
+        .category-count {
+            color: #6B7280;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Products */
+        .products-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, white 0%, #F9FAFB 100%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(220, 38, 38, 0.3);
+        }
+
+        .product-image {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.15) rotate(2deg);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: linear-gradient(135deg, #DC2626, #EF4444);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: 900;
+            font-size: 15px;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.6);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 25px;
+            font-weight: 900;
+            font-size: 12px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.5);
+        }
+
+        .product-info {
+            padding: 22px;
+        }
+
+        .product-category {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #0A0A0A;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .product-description {
+            color: #6B7280;
+            font-size: 13px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #9CA3AF;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .new-price {
+            font-size: 26px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #DC2626, #EF4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+            color: white;
+            width: 100%;
+            padding: 14px;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: 800;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.6);
+        }
+
+        /* Footer */
+        .main-footer {
+            background: linear-gradient(180deg, #0A0A0A 0%, #1F1F1F 100%);
+            color: white;
+            padding: 70px 0 30px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .main-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--gold), var(--primary), transparent);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 22px;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .footer-section p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+            transform: translateX(-5px);
+        }
+
+        .contact-list li {
+            color: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-list i {
+            color: var(--gold);
+            font-size: 16px;
+            min-width: 20px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 35px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                font-size: 11px;
+                padding: 8px 0;
+            }
+
+            .contact-info {
+                font-size: 10px;
+            }
+
+            .header-content {
+                justify-content: center;
+            }
+
+            .logo {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .logo-text h1 {
+                font-size: 22px;
+            }
+
+            .logo-text p {
+                font-size: 9px;
+            }
+
+            .search-bar {
+                width: 100%;
+                max-width: none;
+                order: 3;
+            }
+
+            .main-nav ul {
+                gap: 15px;
+                padding: 12px 0;
+            }
+
+            .main-nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+
+            .category-card {
+                padding: 18px 10px;
+            }
+
+            .category-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 32px;
+                margin-bottom: 12px;
+            }
+
+            .category-name {
+                font-size: 13px;
+            }
+
+            .category-count {
+                font-size: 10px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 180px;
+            }
+
+            .product-info {
+                padding: 15px;
+            }
+
+            .product-name {
+                font-size: 15px;
+            }
+
+            .product-description {
+                font-size: 11px;
+                margin-bottom: 12px;
+            }
+
+            .new-price {
+                font-size: 20px;
+            }
+
+            .old-price {
+                font-size: 13px;
+            }
+
+            .btn-primary {
+                padding: 11px;
+                font-size: 13px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 0599-123456</span>
+                    <span><i class="fas fa-envelope"></i> info@alhaddadmall.com</span>
+                </div>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>نابلس، فلسطين</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="الحداد مول">
+                    <div class="logo-text">
+                        <h1>الحداد مول</h1>
+                        <p>جودة وثقة</p>
+                    </div>
+                </div>
+
+                <div class="search-bar">
+                    <form>
+                        <input type="text" placeholder="ابحث عن المنتجات...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="header-actions">
+                    <div class="header-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="header-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#">العروض</a></li>
+                <li><a href="#categories">الأقسام</a></li>
+                <li><a href="#">عنا</a></li>
+                <li><a href="#">اتصل</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">✨ المتجر الأول في فلسطين ✨</div>
+            <h2 class="hero-title">مرحباً بك في<br>الحداد مول</h2>
+            <p class="hero-subtitle">تسوق أفضل المنتجات بأسعار منافسة وجودة عالية</p>
+            <a href="#products" class="btn btn-gold"><span>تصفح المنتجات 🛒</span></a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <h2 class="section-title">أقسام المتجر</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #059669, #047857);">🥬</div>
+                    <h3 class="category-name">خضروات وفواكه</h3>
+                    <p class="category-count">85 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #DC2626, #991B1B);">🥩</div>
+                    <h3 class="category-name">لحوم وأسماك</h3>
+                    <p class="category-count">45 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #F59E0B, #D97706);">🧀</div>
+                    <h3 class="category-name">ألبان وأجبان</h3>
+                    <p class="category-count">62 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #2563EB, #1E40AF);">🥤</div>
+                    <h3 class="category-name">مشروبات</h3>
+                    <p class="category-count">74 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #EA580C, #C2410C);">🥫</div>
+                    <h3 class="category-name">معلبات</h3>
+                    <p class="category-count">126 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #EC4899, #DB2777);">🍫</div>
+                    <h3 class="category-name">حلويات</h3>
+                    <p class="category-count">93 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #10B981, #059669);">🫘</div>
+                    <h3 class="category-name">بقوليات</h3>
+                    <p class="category-count">67 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #F97316, #EA580C);">🍳</div>
+                    <h3 class="category-name">بهارات</h3>
+                    <p class="category-count">42 منتج</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">المنتجات المميزة</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400" alt="طماطم">
+                        <span class="discount-badge">-15%</span>
+                        <span class="new-badge">جديد</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">خضروات</span>
+                        <h3 class="product-name">طماطم طازجة</h3>
+                        <p class="product-description">طماطم طازجة من المزارع المحلية</p>
+                        <div class="product-price">
+                            <span class="old-price">6.50 ILS</span>
+                            <span class="new-price">5.50 ILS</span>
+                        </div>
+                        <button class="btn-primary">أضف للسلة 🛍️</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?w=400" alt="لحم">
+                        <span class="discount-badge">-20%</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">لحوم</span>
+                        <h3 class="product-name">لحم بقري طازج</h3>
+                        <p class="product-description">لحم بقري درجة أولى للشوي</p>
+                        <div class="product-price">
+                            <span class="old-price">56.00 ILS</span>
+                            <span class="new-price">45.00 ILS</span>
+                        </div>
+                        <button class="btn-primary">أضف للسلة 🛍️</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=400" alt="جبنة">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">ألبان</span>
+                        <h3 class="product-name">جبنة بيضاء</h3>
+                        <p class="product-description">جبنة بيضاء طبيعية 100%</p>
+                        <div class="product-price">
+                            <span class="new-price">12.00 ILS</span>
+                        </div>
+                        <button class="btn-primary">أضف للسلة 🛍️</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400" alt="عصير">
+                        <span class="discount-badge">-25%</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">مشروبات</span>
+                        <h3 class="product-name">عصير برتقال</h3>
+                        <p class="product-description">عصير 100% طبيعي</p>
+                        <div class="product-price">
+                            <span class="old-price">11.00 ILS</span>
+                            <span class="new-price">8.50 ILS</span>
+                        </div>
+                        <button class="btn-primary">أضف للسلة 🛍️</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=400" alt="تونة">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">معلبات</span>
+                        <h3 class="product-name">تونة معلبة</h3>
+                        <p class="product-description">تونة بزيت الزيتون</p>
+                        <div class="product-price">
+                            <span class="new-price">6.00 ILS</span>
+                        </div>
+                        <button class="btn-primary">أضف للسلة 🛍️</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?w=400" alt="شوكولاتة">
+                        <span class="discount-badge">-30%</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">حلويات</span>
+                        <h3 class="product-name">شوكولاتة فاخرة</h3>
+                        <p class="product-description">شوكولاتة بلجيكية بالحليب</p>
+                        <div class="product-price">
+                            <span class="old-price">21.00 ILS</span>
+                            <span class="new-price">15.00 ILS</span>
+                        </div>
+                        <button class="btn-primary">أضف للسلة 🛍️</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1587486937378-93bd88a0cdf6?w=400" alt="عدس">
+                        <span class="new-badge">جديد</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">بقوليات</span>
+                        <h3 class="product-name">عدس أحمر</h3>
+                        <p class="product-description">عدس أحمر درجة أولى</p>
+                        <div class="product-price">
+                            <span class="new-price">8.50 ILS</span>
+                        </div>
+                        <button class="btn-primary">أضف للسلة 🛍️</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400" alt="حمص">
+                        <span class="discount-badge">-10%</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">بقوليات</span>
+                        <h3 class="product-name">حمص حب</h3>
+                        <p class="product-description">حمص حب كامل غني بالبروتين</p>
+                        <div class="product-price">
+                            <span class="old-price">9.00 ILS</span>
+                            <span class="new-price">8.00 ILS</span>
+                        </div>
+                        <button class="btn-primary">أضف للسلة 🛍️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>الحداد مول</h3>
+                    <p>متجرك المفضل لجميع احتياجاتك اليومية بجودة عالية وأسعار منافسة.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#">عن المتجر</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">التوصيل</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone"></i> 0599-123456</li>
+                        <li><i class="fas fa-envelope"></i> info@alhaddadmall.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> نابلس، فلسطين</li>
+                        <li><i class="fas fa-clock"></i> مفتوح 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 الحداد مول. جميع الحقوق محفوظة ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.btn-primary').forEach(button => {
+            button.addEventListener('click', function() {
+                const cartCount = document.querySelector('.cart-count');
+                let count = parseInt(cartCount.textContent);
+                cartCount.textContent = count + 1;
+                
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 80px;
+                    right: 20px;
+                    background: linear-gradient(135deg, #10B981, #059669);
+                    color: white;
+                    padding: 18px 28px;
+                    border-radius: 18px;
+                    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.6);
+                    z-index: 10000;
+                    font-weight: 800;
+                    font-size: 15px;
+                    animation: slideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                `;
+                notification.innerHTML = '<i class="fas fa-check-circle"></i> تم الإضافة بنجاح!';
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.4s ease';
+                    setTimeout(() => notification.remove(), 400);
+                }, 2500);
+            });
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(150px) scale(0.8); opacity: 0; }
+                to { transform: translateX(0) scale(1); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0) scale(1); opacity: 1; }
+                to { transform: translateX(150px) scale(0.8); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
