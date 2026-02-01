@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحداد مول - متجر سوبرماركت فخم</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #F9FAFB;
+            color: #0A0A0A;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+            color: white;
+            padding: 12px 0;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(220, 38, 38, 0.3);
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-left: 20px;
+        }
+
+        .contact-info i, .location i {
+            margin-left: 5px;
+            color: #D4AF37;
+        }
+
+        /* Header */
+        .main-header {
+            background: linear-gradient(135deg, #0A0A0A 0%, #1F1F1F 100%);
+            padding: 25px 0;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 4px 15px rgba(220, 38, 38, 0.5));
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+            padding: 15px 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        .logo-text h1 {
+            color: white;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-text p {
+            color: #D4AF37;
+            font-size: 12px;
+            margin-top: 2px;
+            font-weight: 600;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .search-bar form {
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 16px 30px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            background: #DC2626;
+            color: white;
+            border: none;
+            padding: 0 35px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        .search-bar button:hover {
+            background: #991B1B;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 25px;
+        }
+
+        .header-icon {
+            color: white;
+            font-size: 28px;
+            position: relative;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .header-icon:hover {
+            color: #DC2626;
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: #DC2626;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.6);
+        }
+
+        /* Navigation */
+        .main-nav {
+            background: rgba(220, 38, 38, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 18px 0;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .main-nav a:hover {
+            color: #D4AF37;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #D4AF37;
+            transition: width 0.3s;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #991B1B 0%, #DC2626 50%, #EF4444 100%);
+            padding: 120px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23ffffff"></path></svg>');
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            font-weight: 800;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%);
+            color: #0A0A0A;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.7);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, #DC2626, #D4AF37, #DC2626);
+            border-radius: 10px;
+        }
+
+        /* Categories */
+        .categories-section {
+            padding: 100px 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .category-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            transition: all 0.4s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .category-name {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #0A0A0A;
+            font-weight: 700;
+        }
+
+        .category-count {
+            color: #6B7280;
+            font-size: 14px;
+        }
+
+        /* Products */
+        .products-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .product-image {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #DC2626;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-weight: 800;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.5);
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #10B981;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-category {
+            color: #DC2626;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #0A0A0A;
+            font-weight: 700;
+        }
+
+        .product-description {
+            color: #6B7280;
+            font-size: 14px;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #9CA3AF;
+            font-size: 18px;
+        }
+
+        .new-price {
+            font-size: 28px;
+            font-weight: 800;
+            color: #DC2626;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6);
+        }
+
+        /* Footer */
+        .main-footer {
+            background: linear-gradient(135deg, #0A0A0A 0%, #1F1F1F 100%);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h3 {
+            color: #DC2626;
+            margin-bottom: 25px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #DC2626;
+            padding-right: 5px;
+        }
+
+        .contact-list li {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-list i {
+            margin-left: 12px;
+            color: #D4AF37;
+            font-size: 18px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .search-bar {
+                width: 100%;
+                max-width: none;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +970 599 123456</span>
+                    <span><i class="fas fa-envelope"></i> info@alhaddadmall.com</span>
+                </div>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>نابلس، فلسطين</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="الحداد مول">
+                    <div class="logo-text">
+                        <h1>الحداد مول</h1>
+                        <p>جودة وثقة</p>
+                    </div>
+                </div>
+
+                <div class="search-bar">
+                    <form>
+                        <input type="text" placeholder="ابحث عن المنتجات...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="header-actions">
+                    <div class="header-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="header-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">المنتجات</a></li>
+                <li><a href="#">العروض</a></li>
+                <li><a href="#">الأقسام</a></li>
+                <li><a href="#">عن المتجر</a></li>
+                <li><a href="#">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">مرحباً بك في الحداد مول</h2>
+            <p class="hero-subtitle">تسوق أفضل المنتجات بأسعار منافسة وجودة عالية</p>
+            <a href="#products" class="btn btn-gold">تصفح المنتجات الآن</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">أقسام المتجر</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #059669, #047857);">
+                        🥬
+                    </div>
+                    <h3 class="category-name">خضروات وفواكه</h3>
+                    <p class="category-count">85 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #DC2626, #991B1B);">
+                        🥩
+                    </div>
+                    <h3 class="category-name">لحوم وأسماك</h3>
+                    <p class="category-count">45 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #F59E0B, #D97706);">
+                        🧀
+                    </div>
+                    <h3 class="category-name">ألبان وأجبان</h3>
+                    <p class="category-count">62 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #92400E, #78350F);">
+                        🍞
+                    </div>
+                    <h3 class="category-name">مخبوزات</h3>
+                    <p class="category-count">38 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #2563EB, #1E40AF);">
+                        🥤
+                    </div>
+                    <h3 class="category-name">مشروبات</h3>
+                    <p class="category-count">74 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #EA580C, #C2410C);">
+                        🥫
+                    </div>
+                    <h3 class="category-name">معلبات</h3>
+                    <p class="category-count">126 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #EC4899, #DB2777);">
+                        🍫
+                    </div>
+                    <h3 class="category-name">حلويات</h3>
+                    <p class="category-count">93 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #8B5CF6, #7C3AED);">
+                        🧴
+                    </div>
+                    <h3 class="category-name">منظفات</h3>
+                    <p class="category-count">58 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #10B981, #059669);">
+                        🫘
+                    </div>
+                    <h3 class="category-name">بقوليات</h3>
+                    <p class="category-count">67 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #F97316, #EA580C);">
+                        🍳
+                    </div>
+                    <h3 class="category-name">بهارات وتوابل</h3>
+                    <p class="category-count">42 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #14B8A6, #0D9488);">
+                        🧂
+                    </div>
+                    <h3 class="category-name">زيوت وسمن</h3>
+                    <p class="category-count">31 منتج</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon" style="background: linear-gradient(135deg, #6366F1, #4F46E5);">
+                        🍨
+                    </div>
+                    <h3 class="category-name">مثلجات ومجمدات</h3>
+                    <p class="category-count">54 منتج</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">المنتجات المميزة</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400" alt="طماطم">
+                        <span class="discount-badge">-15%</span>
+                        <span class="new-badge">جديد</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">خضروات</span>
+                        <h3 class="product-name">طماطم طازجة درجة أولى</h3>
+                        <p class="product-description">طماطم طازجة من المزارع المحلية، جودة عالية وطعم لذيذ</p>
+                        <div class="product-price">
+                            <span class="old-price">6.50 ILS</span>
+                            <span class="new-price">5.50 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?w=400" alt="لحم">
+                        <span class="discount-badge">-20%</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">لحوم</span>
+                        <h3 class="product-name">لحم بقري طازج للشوي</h3>
+                        <p class="product-description">لحم بقري طازج درجة أولى، مثالي للشوي والطبخ</p>
+                        <div class="product-price">
+                            <span class="old-price">56.00 ILS</span>
+                            <span class="new-price">45.00 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=400" alt="جبنة">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">ألبان</span>
+                        <h3 class="product-name">جبنة بيضاء طبيعية</h3>
+                        <p class="product-description">جبنة بيضاء طبيعية 100%، طازجة يومياً</p>
+                        <div class="product-price">
+                            <span class="new-price">12.00 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400" alt="خبز">
+                        <span class="new-badge">جديد</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">مخبوزات</span>
+                        <h3 class="product-name">خبز فرنسي طازج</h3>
+                        <p class="product-description">خبز فرنسي طازج يومياً، مخبوز بالفرن الحجري</p>
+                        <div class="product-price">
+                            <span class="new-price">4.00 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400" alt="عصير">
+                        <span class="discount-badge">-25%</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">مشروبات</span>
+                        <h3 class="product-name">عصير برتقال طبيعي</h3>
+                        <p class="product-description">عصير برتقال 100% طبيعي، بدون إضافات</p>
+                        <div class="product-price">
+                            <span class="old-price">11.00 ILS</span>
+                            <span class="new-price">8.50 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=400" alt="تونة">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">معلبات</span>
+                        <h3 class="product-name">تونة معلبة بزيت الزيتون</h3>
+                        <p class="product-description">تونة بزيت الزيتون، جودة ممتازة</p>
+                        <div class="product-price">
+                            <span class="new-price">6.00 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?w=400" alt="شوكولاتة">
+                        <span class="discount-badge">-30%</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">حلويات</span>
+                        <h3 class="product-name">شوكولاتة فاخرة بالحليب</h3>
+                        <p class="product-description">شوكولاتة بلجيكية فاخرة، طعم رائع</p>
+                        <div class="product-price">
+                            <span class="old-price">21.00 ILS</span>
+                            <span class="new-price">15.00 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?w=400" alt="خيار">
+                        <span class="new-badge">جديد</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">خضروات</span>
+                        <h3 class="product-name">خيار طازج مقرمش</h3>
+                        <p class="product-description">خيار طازج مقرمش من المزرعة</p>
+                        <div class="product-price">
+                            <span class="new-price">3.00 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1587486937378-93bd88a0cdf6?w=400" alt="عدس">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">بقوليات</span>
+                        <h3 class="product-name">عدس أحمر درجة أولى</h3>
+                        <p class="product-description">عدس أحمر منتقى بعناية، جودة ممتازة</p>
+                        <div class="product-price">
+                            <span class="new-price">8.50 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400" alt="حمص">
+                        <span class="discount-badge">-10%</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">بقوليات</span>
+                        <h3 class="product-name">حمص حب كامل</h3>
+                        <p class="product-description">حمص حب كامل درجة أولى، غني بالبروتين</p>
+                        <div class="product-price">
+                            <span class="old-price">9.00 ILS</span>
+                            <span class="new-price">8.00 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400" alt="فول">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">بقوليات</span>
+                        <h3 class="product-name">فول أخضر مجفف</h3>
+                        <p class="product-description">فول أخضر مجفف، مثالي للشوربة</p>
+                        <div class="product-price">
+                            <span class="new-price">7.50 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=400" alt="زيت">
+                        <span class="new-badge">جديد</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">زيوت</span>
+                        <h3 class="product-name">زيت زيتون بكر ممتاز</h3>
+                        <p class="product-description">زيت زيتون بكر من فلسطين، عصر على البارد</p>
+                        <div class="product-price">
+                            <span class="new-price">42.00 ILS</span>
+                        </div>
+                        <button class="btn btn-primary">أضف للسلة <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>الحداد مول</h3>
+                    <p>متجرك المفضل لجميع احتياجاتك اليومية بجودة عالية وأسعار منافسة. نوفر لك أفضل المنتجات من خضروات، لحوم، ألبان، بقوليات والمزيد.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#">عن المتجر</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">التوصيل والشحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone"></i> +970 599 123456</li>
+                        <li><i class="fas fa-envelope"></i> info@alhaddadmall.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> نابلس، فلسطين</li>
+                        <li><i class="fas fa-clock"></i> مفتوح 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 الحداد مول. جميع الحقوق محفوظة. تم التطوير بواسطة فريق الحداد مول</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality for demo
+        document.querySelectorAll('.btn-primary').forEach(button => {
+            button.addEventListener('click', function() {
+                const cartCount = document.querySelector('.cart-count');
+                let count = parseInt(cartCount.textContent);
+                cartCount.textContent = count + 1;
+                
+                // Show notification
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: linear-gradient(135deg, #10B981, #059669);
+                    color: white;
+                    padding: 20px 30px;
+                    border-radius: 15px;
+                    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.5);
+                    z-index: 10000;
+                    font-weight: bold;
+                    animation: slideIn 0.3s ease;
+                `;
+                notification.textContent = '✓ تم إضافة المنتج للسلة بنجاح';
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 2500);
+            });
+        });
+
+        // Add animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
